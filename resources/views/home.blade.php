@@ -1,9 +1,13 @@
-@extends('layouts.app')
+
 
 @section('title', 'Backflowers and Their Benefits')
 
-@section('content')
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+{{-- @section('content') --}}
+
+<x-app-layout>
+    <div  class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+
     <!-- Introduction Section -->
     <section class="text-center mb-12">
         <h1 class="text-4xl font-bold text-gray-800">Backflowers and Their Benefits</h1>
@@ -51,7 +55,7 @@
             <!-- Add more blocks as needed -->
         </div>
     </section>
-    
-    <!-- More sections can be added here -->
 </div>
-@endsection
+    <!-- More sections can be added here -->
+</x-app-layout>
+{{-- @endsection --}}
