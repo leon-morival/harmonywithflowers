@@ -132,15 +132,18 @@
                 {{ __('Reiki') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('bachflowers')" :active="request()->routeIs('bachflowers')">
+            <x-responsive-nav-link :href="route('bachflowers')" :active="request()->routeIs('bachflowers*')">
                 {{ __('Bach Flowers') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('appointments')" :active="request()->routeIs('appointments')">
+            <x-responsive-nav-link :href="route('appointments')" :active="request()->routeIs('appointments*')">
                 {{ __('Appointments') }}
             </x-responsive-nav-link>
 
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                {{ __('About') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                 {{ __('About') }}
             </x-responsive-nav-link>
 
