@@ -2,12 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('home');
 });
 
+// Route to show the contact form
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 
+// Route to handle form submission
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 // Home route
 Route::get('/home', function () {
     return view('home');
@@ -78,7 +83,6 @@ Route::get('/bachflowers/overcare', function () {
 Route::get('/reiki', function () {
     return view('reiki');
 })->name('reiki'); 
-
 
 
 // Route::get('/dashboard', function () {

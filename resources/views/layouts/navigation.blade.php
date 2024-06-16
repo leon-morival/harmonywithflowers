@@ -144,7 +144,7 @@
                 {{ __('About') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
-                {{ __('About') }}
+                {{ __('Contact') }}
             </x-responsive-nav-link>
 
         </div>

@@ -7,8 +7,8 @@
             <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
                 <div class="flex flex-col lg:flex-row">
                     <!-- Bach Flowers Image -->
-                    <div class="lg:w-1/2 text-center">
-                        <img src="{{ asset('/bach_img/rescue_remedy.png') }}" alt="Bach Flowers" class="h-72 ">
+                    <div class="lg:w-1/2  flex items-center justify-center">
+                        <img src="{{ asset('/bach_img/rescue_remedy.png') }}" alt="Bach Flowers" class="h-80 ">
                     </div>
                     <!-- Bach Flowers Content -->
                     <div class="lg:w-1/2">
