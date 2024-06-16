@@ -32,7 +32,10 @@ Route::get('/appointments', function () {
 Route::get('/appointments/reiki', function () {
     return view('appointments.reiki');
 })->name('appointments.reiki');
-
+// Bach Flowers route
+Route::get('/bachflowers', function () {
+    return view('bachflowers/index');
+})->name('bachflowers'); 
 // Bach Flowers routes
 Route::get('/appointments/bachflowers/face-to-face', function () {
     return view('appointments.bachflowers-face-to-face');
@@ -42,15 +45,41 @@ Route::get('/appointments/bachflowers/zoom', function () {
     return view('appointments.bachflowers-zoom');
 })->name('appointments.bachflowers.zoom');
 
+// Routes for Bach Flowers categories
+Route::get('/bachflowers/fear', function () {
+    return view('bachflowers.fear');
+})->name('bachflowers.fear');
+
+Route::get('/bachflowers/uncertainty', function () {
+    return view('bachflowers.uncertainty');
+})->name('bachflowers.uncertainty');
+
+Route::get('/bachflowers/insufficient-interest', function () {
+    return view('bachflowers.insufficient-interest');
+})->name('bachflowers.insufficient-interest');
+
+Route::get('/bachflowers/loneliness', function () {
+    return view('bachflowers.loneliness');
+})->name('bachflowers.loneliness');
+
+Route::get('/bachflowers/oversensitivity', function () {
+    return view('bachflowers.oversensitivity');
+})->name('bachflowers.oversensitivity');
+
+Route::get('/bachflowers/despondency', function () {
+    return view('bachflowers.despondency');
+})->name('bachflowers.despondency');
+
+Route::get('/bachflowers/overcare', function () {
+    return view('bachflowers.overcare');
+})->name('bachflowers.overcare');
+
 // Reiki route
 Route::get('/reiki', function () {
     return view('reiki');
 })->name('reiki'); 
 
-// Bach Flowers route
-Route::get('/bachflowers', function () {
-    return view('bachflowers/index');
-})->name('bachflowers'); 
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

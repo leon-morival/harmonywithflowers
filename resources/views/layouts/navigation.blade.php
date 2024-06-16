@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('reiki')" :active="request()->routeIs('reiki')">
                         {{ __('Reiki') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('bachflowers')" :active="request()->routeIs('bachflowers')">
+                    <x-nav-link :href="route('bachflowers')" :active="request()->routeIs('bachflowers*')">
                         {{ __('Bach Flowers') }}
                     </x-nav-link>
                     <x-nav-link :href="route('appointments')" :active="request()->routeIs('appointments*')">
