@@ -6,3 +6,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-app-color {
+    background-color: #ead8c6;
+}

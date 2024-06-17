@@ -9,17 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-  public function up()
-{
-    Schema::create('remedies', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->text('description')->nullable();
-        $table->decimal('price', 8, 2);
-        $table->timestamps();
-    });
-}
-
+    public function up()
+    {
+        Schema::create('remedies', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->decimal('price', 8, 2);
+            $table->string('image_url')->nullable(); // Add this line
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

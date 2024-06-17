@@ -38,7 +38,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Fear -->
-                    <div class="bg-orange-300 rounded-md p-4">
+                    <div class="bg-orange-200 rounded-md p-4">
                         <a href="{{ route('bachflowers.fear') }}">
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Fear</h4>
                             <div class="grid grid-cols-1 gap-4">
@@ -72,7 +72,7 @@
                     </div>
 
                     <!-- Uncertainty -->
-                    <div class="bg-yellow-300 rounded-md p-4">
+                    <div class="bg-yellow-200 rounded-md p-4">
                         <a href="{{ route('bachflowers.uncertainty') }}">
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Uncertainty</h4>
                             <div class="grid grid-cols-1 gap-4">
@@ -111,7 +111,7 @@
                     </div>
 
                     <!-- Insufficient interest in present circumstances -->
-                    <div class="bg-green-300 rounded-md p-4">
+                    <div class="bg-green-200 rounded-md p-4">
                         <a href="{{ route('bachflowers.insufficient-interest') }}">
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Insufficient interest in
                                 present circumstances</h4>
@@ -156,7 +156,7 @@
                         </a>
                     </div>
                     <!-- Loneliness -->
-                    <div class="bg-purple-300 rounded-md p-4">
+                    <div class="bg-purple-200 rounded-md p-4">
                         <a href="{{ route('bachflowers.loneliness') }}">
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Loneliness</h4>
 
@@ -180,7 +180,7 @@
                         </a>
                     </div>
                     <!-- Over-sensitivity to influences and ideas -->
-                    <div class="bg-green-500 rounded-md p-4">
+                    <div class="bg-green-300 rounded-md p-4">
                         <a href="{{ route('bachflowers.oversensitivity') }}">
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Over-sensitivity to
                                 influences and ideas</h4>
@@ -211,7 +211,7 @@
                     </div>
                     <!-- Over-care for the welfare of others -->
 
-                    <div class="bg-blue-300 rounded-md p-4">
+                    <div class="bg-blue-200 rounded-md p-4">
                         <a href="{{ route('bachflowers.overcare') }}">
 
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Over-care for the welfare
@@ -247,7 +247,7 @@
                         </a>
                     </div>
                     <!-- Despondency or despair -->
-                    <div class="bg-pink-300 rounded-md p-4">
+                    <div class="bg-pink-200 rounded-md p-4">
                         <a href="{{ route('bachflowers.despondency') }}">
 
                             <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Despondency or despair
