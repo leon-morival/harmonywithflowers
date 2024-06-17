@@ -13,7 +13,7 @@
 @include('layouts.navigation')
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-yellow-600">
 
         <!-- Page Heading -->
         @isset($header)

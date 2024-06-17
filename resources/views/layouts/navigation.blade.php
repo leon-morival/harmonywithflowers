@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('remedies')" :active="request()->routeIs('remedies')">
+                        {{ __('Shop Remedies') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('reiki')" :active="request()->routeIs('reiki')">
                         {{ __('Reiki') }}
                     </x-nav-link>
@@ -30,14 +33,20 @@
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('Contact') }}
                     </x-nav-link>
-
                 </div>
-
             </div>
 
-            @auth
-                <!-- Settings Dropdown -->
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <!-- Cart Icon -->
+                <a href="{{ route('cart.view') }}" class="mr-4 text-gray-500 hover:text-gray-700">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart ({{ session('cart') ? count(session('cart')) : 0 }})
+
+
+                </a>
+
+                @auth
+                    <!-- Settings Dropdown -->
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button
@@ -64,18 +73,16 @@
                                 @csrf
                                 <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                            this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
                     </x-dropdown>
-                </div>
-            @endauth
+                @endauth
 
-            @guest
-                <!-- Guest Dropdown -->
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
+                @guest
+                    <!-- Guest Dropdown -->
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button
@@ -101,8 +108,8 @@
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
-                </div>
-            @endguest
+                @endguest
+            </div>
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
@@ -123,30 +130,32 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-
             <x-responsive-nav-link :href="route('reiki')" :active="request()->routeIs('reiki')">
                 {{ __('Reiki') }}
             </x-responsive-nav-link>
-
             <x-responsive-nav-link :href="route('bachflowers')" :active="request()->routeIs('bachflowers*')">
                 {{ __('Bach Flowers') }}
             </x-responsive-nav-link>
-
             <x-responsive-nav-link :href="route('appointments')" :active="request()->routeIs('appointments*')">
                 {{ __('Appointments') }}
             </x-responsive-nav-link>
-
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 {{ __('About') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                 {{ __('Contact') }}
             </x-responsive-nav-link>
+        </div>
 
+        <!-- Cart Icon in Responsive Menu -->
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('cart.view')">
+                <i class="fa-solid fa-cart-shopping"></i>
+                {{ __('Cart') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -164,10 +173,9 @@
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                                    this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-responsive-nav-link>
                     </form>
