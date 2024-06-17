@@ -21,8 +21,7 @@
                             @csrf
                             <input type="hidden" name="remedy_id" value="{{ $remedy->id }}">
                             <button type="submit"
-                                class="px-4 py-2 bg-blue-400 rounded-none text-white  hover:bg-blue-600">Add to
-                                Cart</button>
+                                class="px-4 py-2 w-full bg-blue-400 rounded-none text-white  hover:bg-blue-600">Add</button>
                         </form>
                     </div>
                 </div>

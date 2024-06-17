@@ -1,11 +1,12 @@
 @section('title', 'Reiki')
 
 <x-app-layout>
-    <section class="py-6 px-12">
+    <section class=" px-12">
         <div class="max-w-7xl mx-auto">
-            <p class="text-4xl font-bold text-center pb-6">What is Reiki?</p>
             <!-- Reiki Information Section -->
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="bg-white shadow-lg lg:p-12 md:p-6 ">
+                <p class="text-4xl font-bold text-center pb-6">What is Reiki?</p>
+
                 <div class="flex flex-col lg:flex-row">
                     <!-- Reiki Image -->
                     <div class="lg:w-1/2">
@@ -32,37 +33,34 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="flex flex-col lg:flex-row mb-8 bg-white rounded-lg shadow-lg px-40 py-6">
-                <!-- Reiki Benefits Section -->
-                <div class="lg:w-1/2 ">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Benefits of Reiki</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Reduces stress and promotes relaxation</li>
-                        <li>Enhances emotional well-being</li>
-                        <li>Alleviates physical pain</li>
-                        <li>Improves mental clarity</li>
-                        <li>Promotes overall healing</li>
-                    </ul>
-                </div>
+                <div class="flex flex-row my-20">
 
 
-                <!-- Booking Section -->
-                <div class="lg:w-1/2">
-                    <h3 class="text-2xl font-semibold text-gray-800 text-center mb-4">Book a Reiki Session Now</h3>
-                    <div class="flex justify-center">
-                        <a href="{{ route('appointments.reiki') }}"
-                            class="inline-block px-6 py-2 text-center text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
-                            Book Reiki
-                        </a>
+                    <!-- Reiki Benefits Section -->
+                    <div class="lg:w-1/2 ">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Benefits of Reiki</h3>
+                        <ul class="list-disc list-inside text-gray-700">
+                            <li>Reduces stress and promotes relaxation</li>
+                            <li>Enhances emotional well-being</li>
+                            <li>Alleviates physical pain</li>
+                            <li>Improves mental clarity</li>
+                            <li>Promotes overall healing</li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Booking Section -->
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-semibold text-gray-800 text-center mb-4">Book a Reiki Session Now</h3>
+                        <div class="flex justify-center">
+                            <a href="{{ route('appointments.reiki') }}"
+                                class="inline-block px-6 py-2 text-center text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+                                Book Reiki
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <!-- Qualification Section -->
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-2">
                 <div class="flex flex-col lg:flex-row">
                     <!-- Qualification Image -->
                     <div class="lg:w-1/2">
