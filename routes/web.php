@@ -7,6 +7,8 @@ use App\Http\Controllers\RemedyController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CartController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -18,13 +20,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 // Route Shop Remedies
 
 Route::get('/remedies', [RemedyController::class, 'index'])->name('remedies');
-Route::post('/remedies/add-to-cart', [RemedyController::class, 'addToCart'])->name('remedies.addToCart');
-
-// Cart
-Route::get('/cart', [OrderController::class, 'viewCart'])->name('cart.view');
-Route::post('/cart/remove', [OrderController::class, 'removeFromCart'])->name('cart.remove');
-
-Route::post('/cart/checkout', [OrderController::class, 'checkout'])->name('cart.checkout');
+Route::post('/cart/add-bottle', [CartController::class, 'addBottle'])->name('cart.addBottle');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.removeFromCart');
+Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
 
 // Route to show the contact form
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');

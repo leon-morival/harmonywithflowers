@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Remedy;
-use Illuminate\Support\Facades\Validator;
-
+use App\Models\Cart;
 
 class RemedyController extends Controller
 {
@@ -16,28 +15,29 @@ class RemedyController extends Controller
     }
 
     public function addToCart(Request $request)
-{
-    $request->validate([
-        'remedy_id' => 'required|exists:remedies,id',
-        'quantity' => 'required|integer|min:1'
-    ]);
+    {
+        $request->validate([
+            'remedies' => 'required|array|min:1|max:7',
+            'remedies.*' => 'exists:remedies,id',
+            'quantities' => 'required|array',
+            'quantities.*' => 'required|integer|min:1|max:7',
+        ]);
 
-    $cart = session()->get('cart', []);
-    $remedyId = $request->remedy_id;
+        $remedies = $request->input('remedies');
+        $quantities = $request->input('quantities');
 
-    if (isset($cart[$remedyId])) {
-        $cart[$remedyId]['quantity'] += $request->quantity;
-    } else {
-        $remedy = Remedy::find($remedyId);
-        $cart[$remedyId] = [
-            'remedy' => $remedy,
-            'quantity' => $request->quantity
-        ];
+        foreach ($remedies as $remedyId) {
+            $quantity = $quantities[$remedyId];
+
+            // Add each selected remedy with its quantity to the cart
+            // Assuming you have a Cart model and authenticated user
+            Cart::create([
+                'user_id' => auth()->id(),
+                'remedy_id' => $remedyId,
+                'quantity' => $quantity,
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Remedies added to cart successfully!');
     }
-
-    session()->put('cart', $cart);
-    return redirect()->route('remedies')->with('success', 'Remedy added to cart.');
-    
-}
-
 }
