@@ -5,10 +5,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RemedyController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\UserController;
+
 Route::get('/', function () {
     return view('home');
 });
-
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::resource('users', UserController::class);
+});
 // Route Shop Remedies
 
 Route::get('/remedies', [RemedyController::class, 'index'])->name('remedies');

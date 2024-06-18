@@ -13,7 +13,7 @@
             @foreach ($remedies as $remedy)
                 <div class="border p-4 shadow-lg flex flex-col bg-gray-100 h-full">
                     <img src="{{ $remedy->image_url }}" alt="{{ $remedy->name }}"
-                        class="w-full h-48 object-cover rounded mb-4">
+                        class="h-full  object-cover rounded mb-4">
                     <div class="flex flex-col flex-grow justify-end">
                         <h2 class="text-xl font-semibold">{{ $remedy->name }}</h2>
                         <p class="mt-2">{{ $remedy->description }}</p>
