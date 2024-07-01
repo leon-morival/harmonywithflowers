@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RemedyController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
@@ -23,8 +23,13 @@ Route::get('/remedies', [RemedyController::class, 'index'])->name('remedies');
 Route::post('/cart/add-bottle', [CartController::class, 'addBottle'])->name('cart.addBottle');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.removeFromCart');
-Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
-
+// Payment
+Route::middleware(['auth'])->group(function () {
+    Route::get('/checkout', [CheckoutController::class, 'showCheckoutForm'])->name('checkout.form');
+    Route::post('/checkout', [CheckoutController::class, 'processPayment'])->name('checkout.process');
+    Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
+    Route::get('/checkout/cancel', [CheckoutController::class, 'cancel'])->name('checkout.cancel');
+});
 // Route to show the contact form
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 

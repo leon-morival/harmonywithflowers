@@ -18,7 +18,8 @@ class CartController extends Controller
             }
             return $carry;
         }, 0);
-    
+        session()->put('totalPrice', $totalPrice);
+        
         return view('cart.view', compact('cart', 'totalPrice'));
     }
     

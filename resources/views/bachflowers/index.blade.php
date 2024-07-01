@@ -33,38 +33,38 @@
             </div>
 
             <!-- Bach Flowers Categories Section -->
-            <div class="bg-white rounded-md shadow-lg p-6 mb-8">
+            <div class="bg-gray-200 rounded-md shadow-lg p-6 mb-8">
                 <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Categories of Bach Flowers</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Fear -->
-                    <div class="bg-orange-200 rounded-md p-4">
+                    <div class="bg-orange-300 rounded-md p-4 font-bold">
                         <a href="{{ route('bachflowers.fear') }}">
-                            <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Fear</h4>
-                            <div class="grid grid-cols-1 gap-4">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center">Fear</h4>
+                            <div class="grid grid-cols-1 gap-4 police-test text-2xl">
                                 <div class="flex items-center">
                                     <img src="{{ asset('bach_img/aspen.png') }}" alt="Aspen"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Aspen</span>
+                                        class="w-16 h-16 object-cover rounded-full bg-orange-200 shadow-xl ">
+                                    <span class="ml-4 text-gray-700 font-bold">Aspen</span>
                                 </div>
                                 <div class="flex items-center">
                                     <img src="{{ asset('bach_img/cherry_plum.png') }}" alt="Cherry Plum"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                        class="w-16 h-16 object-cover rounded-full shadow-xl ">
                                     <span class="ml-4 text-gray-700">Cherry Plum</span>
                                 </div>
                                 <div class="flex items-center">
                                     <img src="{{ asset('bach_img/mimulus.png') }}" alt="Mimulus"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                        class="w-16 h-16 object-cover rounded-full shadow-lg ">
                                     <span class="ml-4 text-gray-700">Mimulus</span>
                                 </div>
                                 <div class="flex items-center">
                                     <img src="{{ asset('bach_img/red_chestnut.png') }}" alt="Red Chestnut"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                        class="w-16 h-16 object-cover rounded-full shadow-lg ">
                                     <span class="ml-4 text-gray-700">Red Chestnut</span>
                                 </div>
                                 <div class="flex items-center">
                                     <img src="{{ asset('bach_img/rock_rose.png') }}" alt="Rock Rose"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                        class="w-16 h-16 object-cover rounded-full shadow-lg ">
                                     <span class="ml-4 text-gray-700">Rock Rose</span>
                                 </div>
                             </div>
@@ -246,58 +246,81 @@
                             </div>
                         </a>
                     </div>
-                    <!-- Despondency or despair -->
-                    <div class="bg-pink-200 rounded-md p-4">
-                        <a href="{{ route('bachflowers.despondency') }}">
+                </div>
+                <div class="flex flex-row">
+                    <div class="w-1/6">
+                    </div>
+                    <div class="w-4/6">
+                        <!-- Despondency or despair -->
+                        <div class="bg-pink-200 rounded-md p-4 mt-4 justify-center">
+                            <a href="{{ route('bachflowers.despondency') }}">
 
-                            <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Despondency or despair
-                            </h4>
+                                <h4 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Despondency or
+                                    despair
+                                </h4>
+                                <div class="flex flex-row">
+                                    <div class="w-1/2">
+                                        <div class="grid grid-cols-1 gap-4">
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/larch.png') }}" alt="Larch"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Larch</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/pine.png') }}" alt="Pine"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Pine</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/elm.png') }}" alt="Elm"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Elm</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/sweet_chestnut.png') }}"
+                                                    alt="Sweet Chestnut"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Sweet Chestnut</span>
+                                            </div>
 
-                            <div class="grid grid-cols-1 gap-4">
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/larch.png') }}" alt="Larch"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Larch</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-1/2">
+                                        <div class="grid grid-cols-1 gap-4">
+
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/star_of_bethlehem.png') }}"
+                                                    alt="Star of Bethlehem"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Star of Bethlehem</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/willow.png') }}" alt="Willow"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Willow</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/oak.png') }}" alt="Oak"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Oak</span>
+                                            </div>
+                                            <div class="flex items-center">
+                                                <img src="{{ asset('bach_img/crab_apple.png') }}" alt="Crab Apple"
+                                                    class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
+                                                <span class="ml-4 text-gray-700">Crab Apple</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/pine.png') }}" alt="Pine"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Pine</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/elm.png') }}" alt="Elm"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Elm</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/sweet_chestnut.png') }}" alt="Sweet Chestnut"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Sweet Chestnut</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/star_of_bethlehem.png') }}" alt="Star of Bethlehem"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Star of Bethlehem</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/willow.png') }}" alt="Willow"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Willow</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/oak.png') }}" alt="Oak"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Oak</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="{{ asset('bach_img/crab_apple.png') }}" alt="Crab Apple"
-                                        class="w-16 h-16 object-cover rounded-full shadow-lg bg-gray-100">
-                                    <span class="ml-4 text-gray-700">Crab Apple</span>
-                                </div>
-                            </div>
-                        </a>
+
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-1/6">
                     </div>
                 </div>
+
             </div>
 
             <!-- Qualification Section -->

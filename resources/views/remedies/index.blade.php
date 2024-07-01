@@ -18,19 +18,24 @@
 
         <form action="{{ route('cart.addBottle') }}" method="POST">
             @csrf
-            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($remedies as $remedy)
-                    <div class="border p-4 shadow-lg flex flex-col bg-gray-100 h-full">
+                    <div class="border p-4 shadow-lg flex flex-col bg-gray-100 h-full rounded-md">
                         <img src="{{ $remedy->image_url }}" alt="{{ $remedy->name }}"
-                            class="h-full object-cover rounded mb-4">
-                        <div class="flex flex-col flex-grow justify-end">
-                            <h2 class="text-xl font-semibold">{{ $remedy->name }}</h2>
-                            <p class="mt-2">{{ $remedy->description }}</p>
-                            <div class="mt-4">
+                            class="h-96 w-full object-cover rounded mb-4">
+                        <div class="flex flex-col flex-grow ">
+                            {{-- <h2 class="text-xl font-semibold">{{ $remedy->name }}</h2> --}}
+                            <p class="mt-2 police-test text-3xl"><span style="font-weight:bold;"
+                                    class="text-gray-700">{{ $remedy->name }}</span> {{ $remedy->description }}</p>
+                            {{-- <div class="mt-4">
                                 <input type="checkbox" name="remedies[]" value="{{ $remedy->id }}">
                                 <label for="remedies[]">Select this remedy</label>
-                            </div>
+                            </div> --}}
+
                         </div>
+                        <button class="bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-sm ">Select
+                            Remedy
+                        </button>
                     </div>
                 @endforeach
             </ul>

@@ -10,3 +10,10 @@
 .bg-app-color {
     background-color: #ead8c6;
 }
+
+.police-test {
+    font-family: "Square Peg", cursive;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.14rem;
+}
