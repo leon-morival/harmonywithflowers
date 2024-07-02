@@ -1,47 +1,40 @@
 <?php
-
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 // Route to show the contact form
-Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+
+
 
 // Route to handle form submission
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
-// Home route
-Route::get('/home', function () {
-    return view('home');
-})->name('home'); 
 
 // About route
 Route::get('/about', function () {
     return view('about');
-})->name('about'); 
-
-// Contact route
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact'); 
+})->name('about');
 
 // Appointments route
 Route::get('/appointments', function () {
-    return view('appointments/index');
-})->name('appointments'); 
+    return view('appointments.index');
+})->name('appointments');
 
 // Reiki route
 Route::get('/appointments/reiki', function () {
     return view('appointments.reiki');
 })->name('appointments.reiki');
-// Bach Flowers route
-Route::get('/bachflowers', function () {
-    return view('bachflowers/index');
-})->name('bachflowers'); 
+
 // Bach Flowers routes
+Route::get('/bachflowers', function () {
+    return view('bachflowers.index');
+})->name('bachflowers');
+
 Route::get('/appointments/bachflowers/face-to-face', function () {
     return view('appointments.bachflowers-face-to-face');
 })->name('appointments.bachflowers.face-to-face');
@@ -82,17 +75,14 @@ Route::get('/bachflowers/overcare', function () {
 // Reiki route
 Route::get('/reiki', function () {
     return view('reiki');
-})->name('reiki'); 
+})->name('reiki');
 
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
+// Authentication routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Include auth routes
 require __DIR__.'/auth.php';

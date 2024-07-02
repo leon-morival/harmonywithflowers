@@ -8,8 +8,10 @@ class ContactController extends Controller
 {
     public function show()
     {
-        return view('contact');
+     
+        return view('contact'); // Ensure this matches your view path
     }
+    
 
     public function submit(Request $request)
     {
@@ -19,14 +21,18 @@ class ContactController extends Controller
             'message' => 'required|string|max:5000',
         ]);
 
+        $fromAddress = config('mail.from.address');
+        $fromName = config('mail.from.name');
+
         // Handle form submission, e.g., send an email
-        Mail::send([], [], function ($message) use ($request) {
-            $message->to('your-email@example.com')
+        Mail::send([], [], function ($message) use ($request, $fromAddress, $fromName) {
+            $message->to($fromAddress)
                     ->subject('Contact Form Submission')
-                    ->from($request->email, $request->name)
-                    ->setBody($request->message, 'text/html');
+                    ->from($fromAddress, $fromName) // Use the configured email address as the sender
+                    ->replyTo($request->email, $request->name) // Use the user's email as the reply-to address
+                    ->html($request->message);
         });
 
-        return redirect()->route('contact.show')->with('success', 'Thank you for your message. We will get back to you soon.');
+        return redirect()->route('contact')->with('success', 'Thank you for your message. We will get back to you soon.');
     }
 }
